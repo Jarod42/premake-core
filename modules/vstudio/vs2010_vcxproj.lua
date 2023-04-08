@@ -942,7 +942,8 @@
 				m.buildOutputs,
 				m.linkObjects,
 				m.buildMessage,
-				m.buildAdditionalInputs
+				m.buildAdditionalInputs,
+				m.buildInParallel
 			}
 
 			m.emitFiles(prj, group, "CustomBuild", fileFunc, fileCfgFunc, function (cfg, fcfg)
@@ -1703,6 +1704,11 @@
 		end
 	end
 
+	function m.buildInParallel(fcfg, condition)
+		if fcfg.config.flags.MultiProcessorCompile then
+			m.element("BuildInParallel", condition, '%s', 'true')
+		end
+	end
 
 	function m.buildCommands(fcfg, condition)
 		if #fcfg.buildcommands > 0 then
