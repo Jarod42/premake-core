@@ -33,35 +33,34 @@
 	m.elements = {}
 
 	m.ctools = {
-		gcc = "gnu gcc",
-		clang = "clang",
-		msc = "Visual C++",
+		[p.tools.clang] = "clang",
+		[p.tools.gcc] = "gnu gcc",
+		[p.tools.msc] = "Visual C++",
 	}
 	m.cxxtools = {
-		gcc = "gnu g++",
-		clang = "clang++",
-		msc = "Visual C++",
+		[p.tools.clang] = "clang++",
+		[p.tools.gcc] = "gnu g++",
+		[p.tools.msc] = "Visual C++",
 	}
 
 	function m.getcompilername(cfg)
-		local tool = _OPTIONS.cc or cfg.toolset or p.CLANG
+		local toolset, toolset_version = p.tools.canonical(_OPTIONS.cc or cfg.toolset or p.CLANG)
 
-		local toolset = p.tools[tool]
 		if not toolset then
-			error("Invalid toolset '" + (_OPTIONS.cc or cfg.toolset) + "'")
+			error("Invalid toolset '" .. (_OPTIONS.cc or cfg.toolset) .. "'")
 		end
 
 		if p.languages.isc(cfg.language) then
-			return m.ctools[tool]
+			return m.ctools[toolset]
 		elseif p.languages.iscpp(cfg.language) then
-			return m.cxxtools[tool]
+			return m.cxxtools[toolset]
 		end
 	end
 
 	function m.getcompiler(cfg)
-		local toolset = p.tools[_OPTIONS.cc or cfg.toolset or p.CLANG]
+		local toolset, toolset_version = p.tools.canonical(_OPTIONS.cc or cfg.toolset or p.CLANG)
 		if not toolset then
-			error("Invalid toolset '" + (_OPTIONS.cc or cfg.toolset) + "'")
+			error("Invalid toolset '" .. (_OPTIONS.cc or cfg.toolset) .. "'")
 		end
 		return toolset
 	end
@@ -288,7 +287,7 @@
 
 		_x(3, '<General OutputFile="%s" IntermediateDirectory="%s" Command="%s" CommandArguments="%s" UseSeparateDebugArgs="%s" DebugArguments="%s" WorkingDirectory="%s" PauseExecWhenProcTerminates="%s" IsGUIProgram="%s" IsEnabled="%s"/>',
 			targetname, objdir, command, cmdargs, useseparatedebugargs, debugargs, workingdir, pauseexec, isguiprogram, isenabled)
-		_x(3, '<BuildSystem Name="Default"/>')
+		_x(3, '<BuildSystem Name="%s"/>', iif(m.getcompiler(cfg) == p.tools.msc, "NMakefile for MSVC toolset", "Default"))
 	end
 
 	function m.environment(cfg)
