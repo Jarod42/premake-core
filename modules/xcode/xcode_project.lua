@@ -136,8 +136,8 @@
 		tree.traverse(tr, {
 			onnode = function(node)
 				local nodePath
-				if node.path then
-					nodePath = path.getrelative(tr.project.location, node.path)
+				if node.abspath then
+					nodePath = path.getrelative(tr.project.location, node.abspath)
 				end
 				-- assign IDs to every node in the tree
 				node.id = xcode.newid(node.name, nil, nodePath)

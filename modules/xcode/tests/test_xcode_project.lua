@@ -101,7 +101,7 @@
 		xcode.PBXBuildFile(tr)
 		test.capture [[
 /* Begin PBXBuildFile section */
-		F8E8DBA28B76A594F44F49E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6BC6AA50D7885C8F7B2CEA /* Cocoa.framework */; };
+		23BE26393AD0C16B2AECBC79 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCA9E41BF50C93391952C81 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 		]]
 	end
@@ -112,9 +112,9 @@
 		xcode.PBXBuildFile(tr)
 		test.capture [[
 /* Begin PBXBuildFile section */
-		3C98627697D9B5E86B3400B6 /* libB.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D413533EEB25EE70DB41E97E /* libB.dylib */; };
-		91686CDFDECB631154EA631F /* libA.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9AE5C74A870BB9926CD407 /* libA.dylib */; };
-		A7E42B5676077F08FD15D196 /* libC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0547FE2A469B70FDA0E63E /* libC.dylib */; };
+		101A0B723EC05F649801B9B2 /* libA.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E582375AD173430C23AADD9A /* libA.dylib */; };
+		A8686834D70EBC2630501674 /* libC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F03BA1DCDC2CAD8E2E64481C /* libC.dylib */; };
+		DC4139D30AE78DC56428E813 /* libB.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADEEC9B56CFF84DA90792DB /* libB.dylib */; };
 /* End PBXBuildFile section */
 		]]
 	end
@@ -142,15 +142,15 @@
 		xcode.PBXBuildFile(tr)
 		test.capture [[
 /* Begin PBXBuildFile section */
-		12F1B82D44EB02DFBECA3E6D /* E.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817AE35FEA518A7D71E2C75 /* E.framework */; };
-		6557012668C7D358EA347766 /* E.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A817AE35FEA518A7D71E2C75 /* E.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3C98627697D9B5E86B3400B6 /* libB.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D413533EEB25EE70DB41E97E /* libB.dylib */; };
-		AC7C2020DB2274123463CE60 /* libB.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D413533EEB25EE70DB41E97E /* libB.dylib */; };
-		91686CDFDECB631154EA631F /* libA.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9AE5C74A870BB9926CD407 /* libA.dylib */; };
-		E054F1BF0EFB45B1683C9FFF /* libA.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5F9AE5C74A870BB9926CD407 /* libA.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		A7E42B5676077F08FD15D196 /* libC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0547FE2A469B70FDA0E63E /* libC.dylib */; };
-		F56B754B2764BFFDA143FB8B /* D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3987C734A25E6E5229EFAB3 /* D.framework */; };
-		966D8A4599DE5C771B4B0085 /* D.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F3987C734A25E6E5229EFAB3 /* D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		101A0B723EC05F649801B9B2 /* libA.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E582375AD173430C23AADD9A /* libA.dylib */; };
+		E054F1BF0EFB45B1683C9FFF /* libA.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = E582375AD173430C23AADD9A /* libA.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		951C1AD9988CED0B19F99119 /* E.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E5DEE1CEF860D368234D21 /* E.framework */; };
+		6557012668C7D358EA347766 /* E.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 64E5DEE1CEF860D368234D21 /* E.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A8686834D70EBC2630501674 /* libC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F03BA1DCDC2CAD8E2E64481C /* libC.dylib */; };
+		C632A3F8C9A3762A4B101A38 /* D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19E71202BB0F312C4DBDF60 /* D.framework */; };
+		966D8A4599DE5C771B4B0085 /* D.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C19E71202BB0F312C4DBDF60 /* D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC4139D30AE78DC56428E813 /* libB.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADEEC9B56CFF84DA90792DB /* libB.dylib */; };
+		AC7C2020DB2274123463CE60 /* libB.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 6ADEEC9B56CFF84DA90792DB /* libB.dylib */; };
 /* End PBXBuildFile section */
 		]]
 	end
@@ -449,7 +449,7 @@
 		test.capture [[
 /* Begin PBXFileReference section */
 		19A5C4E61D1697189E833B26 /* MyProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = MyProject; path = MyProject; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D6BC6AA50D7885C8F7B2CEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6CCA9E41BF50C93391952C81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 		]]
 	end
@@ -462,9 +462,9 @@
 		test.capture [[
 /* Begin PBXFileReference section */
 		19A5C4E61D1697189E833B26 /* MyProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = MyProject; path = MyProject; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F9AE5C74A870BB9926CD407 /* libA.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libA.dylib; path = ../libA.dylib; sourceTree = SOURCE_ROOT; };
-		CF0547FE2A469B70FDA0E63E /* libC.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libC.dylib; path = /usr/lib/libC.dylib; sourceTree = "<absolute>"; };
-		D413533EEB25EE70DB41E97E /* libB.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libB.dylib; path = libB.dylib; sourceTree = SOURCE_ROOT; };
+		6ADEEC9B56CFF84DA90792DB /* libB.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libB.dylib; path = libB.dylib; sourceTree = SOURCE_ROOT; };
+		E582375AD173430C23AADD9A /* libA.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libA.dylib; path = ../libA.dylib; sourceTree = SOURCE_ROOT; };
+		F03BA1DCDC2CAD8E2E64481C /* libC.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libC.dylib; path = /usr/lib/libC.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 		]]
 	end
@@ -578,7 +578,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8E8DBA28B76A594F44F49E2 /* Cocoa.framework in Frameworks */,
+				23BE26393AD0C16B2AECBC79 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,7 +707,7 @@
 		12F5A37D963B00EFBF8281BD /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
-				5C62B7965FD389C8E1402DD6 /* source.h */,
+				E91A2DDD367D240FAC9C241D /* source.h */,
 				A6C936B49B3FADE6EA134CF4 /* Products */,
 			);
 			name = MyProject;
@@ -821,7 +821,7 @@
 		BBF76781A7E87333FA200DC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D6BC6AA50D7885C8F7B2CEA /* Cocoa.framework */,
+				6CCA9E41BF50C93391952C81 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -840,13 +840,21 @@
 		12F5A37D963B00EFBF8281BD /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
-				20D885C0C52B2372D7636C00 /* Headers */,
+				C0B9CBBC53C524AE9BFA19FC /* Headers */,
 				A6C936B49B3FADE6EA134CF4 /* Products */,
 			);
 			name = MyProject;
 			sourceTree = "<group>";
 		};
-		20D885C0C52B2372D7636C00 /* Headers */ = {
+		A6C936B49B3FADE6EA134CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19A5C4E61D1697189E833B26 /* MyProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0B9CBBC53C524AE9BFA19FC /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				E91A2DDD367D240FAC9C241D /* source.h */,
