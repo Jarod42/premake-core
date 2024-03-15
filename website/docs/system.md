@@ -39,16 +39,18 @@ Premake 5.0 or later.
 ```lua
 workspace "MyWorkspace"
    configurations { "Debug", "Release" }
-   system { "Windows", "Unix", "Mac" }
+   platforms { "Windows", "Unix", "Mac" }
 
-   filter "system:Windows"
+   filter "platforms:Windows"
       system "windows"
 
-   filter "system:Unix"
+   filter "platforms:Unix"
       system "linux"
 
-   filter "system:Mac"
+   filter "platforms:Mac"
       system "macosx"
+
+   filter {}
 ```
 
 ### See Also ###
