@@ -18,7 +18,17 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define PREMAKE_VERSION        "5.0.0-dev"
+// #define PREMAKE_VERSION "5.x.x-xxxx"
+#ifdef __has_include
+# if __has_include("premake_git_version.h")
+#  include "premake_git_version.h"
+# else
+#  include "premake_archive_version.h"
+# endif
+#else
+# define PREMAKE_VERSION "Unknown"
+#endif
+
 #define PREMAKE_COPYRIGHT      "Copyright (C) 2002-2025 Jess Perkins and the Premake Project"
 #define PREMAKE_PROJECT_URL    "https://github.com/premake/premake-core/wiki"
 

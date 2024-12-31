@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Install booststrap's dependencies
       run: |
         sudo apt-get update 
@@ -46,6 +48,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Build
       run: PLATFORM=${{ matrix.platform }} CONFIG=${{ matrix.config }} ./Bootstrap.sh
     - name: Test
@@ -69,6 +73,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Build
       shell: cmd
       env:
@@ -107,6 +113,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: 'Setup MSYS2'
       uses: msys2/setup-msys2@v2
       with:
@@ -146,6 +154,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: tritao/setup-cosmopolitan@v1.3
       with:
         version: '3.9.2'
@@ -175,6 +185,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Start FreeBSD VM
       uses: vmactions/freebsd-vm@v1
       with:
@@ -214,6 +226,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Start OpenBSD VM
       uses: vmactions/openbsd-vm@v1
       with:
@@ -253,6 +267,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Start NetBSD VM
       uses: vmactions/netbsd-vm@v1
       with:
@@ -284,6 +300,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Start DragonflyBSD VM
       uses: vmactions/dragonflybsd-vm@v1
       with:
@@ -315,6 +333,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Start Solaris VM
       uses: vmactions/solaris-vm@v1
       with:

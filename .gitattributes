@@ -1,1 +1,2 @@
 Bootstrap.bat text eol=crlf
+src/host/premake_archive_version.h export-subst

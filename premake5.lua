@@ -192,6 +192,38 @@
 --    symbols "On"
 --
 
+	local function autoversion_h()
+		local git_tag, errorCode = os.outputof("git describe --tag --always")
+		if errorCode == 0 then
+			print("git description: ", git_tag)
+			local content = io.readfile("src/host/premake_git_version.h.in")
+			content = content:gsub("${GIT_DESC}", git_tag)
+
+			local locationDir = _OPTIONS["to"]
+			os.mkdir(locationDir)
+			local f, err = os.writefile_ifnotequal(content, path.join(locationDir, "premake_git_version.h"))
+
+			if (f == 0) then -- file not modified
+			elseif (f < 0) then
+				error(err, 0)
+				return false
+			elseif (f > 0) then
+				print("Generated premake_git_version.h...")
+			end
+
+			return true
+		else
+			print("`git describe --tag` failed with error code", errorCode, git_tag)
+			return false
+		end
+	end
+
+	if premake.action.isConfigurable() then
+		autoversion_h()
+	end
+
+	gitintegration "Always"
+
 	solution "Premake5"
 		configurations { "Release", "Debug" }
 		location ( _OPTIONS["to"] )
@@ -269,6 +301,7 @@
 		{
 			"*.txt", "**.lua",
 			"src/**.h", "src/**.c",
+			"src/**.in",
 			"modules/**"
 		}
 
@@ -277,6 +310,8 @@
 			"contrib/**.*",
 			"binmodules/**.*"
 		}
+
+		includedirs { _OPTIONS["to"] } -- for generated file premake_git_version.h
 
 		filter { "options:lua-src=contrib" }
 			includedirs { "contrib/lua/src", "contrib/luashim" }
