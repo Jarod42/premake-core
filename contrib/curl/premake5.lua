@@ -18,7 +18,7 @@ project "curl-lib"
 	filter { "options:zlib-src=contrib" }
 		includedirs { '../zlib' }
 
-	filter { "system:windows" }
+	filter { "system:windows", "toolset:not clang" }
 		defines { "USE_SCHANNEL", "USE_WINDOWS_SSPI" }
 		links { "crypt32", "bcrypt" }
 
