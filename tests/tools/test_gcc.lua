@@ -708,6 +708,20 @@
 		test.contains({ "-lole32" }, gcc.getlinks(cfg))
 	end
 
+	function suite.links_onWholeArchive_onNonMacOSX()
+		system "windows"
+		wholearchive "On"
+		links { "ole32" }
+		prepare()
+		test.contains({ "-Wl,--whole-archive", "-lole32", "-Wl,--no-whole-archive" }, gcc.getlinks(cfg))
+	end
+
+	function suite.links_onWholeArchive_onMacOSX()
+		system "MacOSX"
+		links { "ole32" }
+		prepare()
+		test.contains({ "-force_load ole32" }, gcc.getlinks(cfg))
+	end
 
 --
 -- When linking to a static sibling library, the relative path to the library
