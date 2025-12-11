@@ -290,6 +290,7 @@ module.exports = {
 						'vpaths',
 						'vsprops',
 						'warnings',
+						'wholearchive',
 						'workspace',
 						'xcodebuildresources',
 						'xcodebuildsettings',
