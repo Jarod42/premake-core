@@ -11,10 +11,18 @@ jobs:
         platform: [x64]
         depsrc: [none, contrib, system]
         cc: [gcc, clang]
+        include:
+          - depsrc: system
+            contrib_directory: keep
+          - depsrc: system
+            contrib_directory: remove
     timeout-minutes: 15
     steps:
     - name: Checkout
       uses: actions/checkout@v6
+    - name: remove contrib directory
+      if: matrix.contrib_directory == 'remove'
+      run: rm -Rf contrib
     - name: Install booststrap's dependencies
       run: |
         sudo apt-get update 
